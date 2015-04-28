@@ -3,15 +3,15 @@ package com.company;
 /**
  * Created by jjhu on 2015/4/24.
  */
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
+//class TreeNode {
+//    int val;
+//    TreeNode left;
+//    TreeNode right;
+//
+//    TreeNode(int x) {
+//        val = x;
+//    }
+//}
 public class MinimumDepthofBinaryTree {
 
     public int minDepth(TreeNode root) {
