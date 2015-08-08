@@ -14,15 +14,6 @@ public class ThreeSum {
         if (num.length == 0)
             return new ArrayList<List<Integer>>();
 
-        /*for (int i = 1; i < num.length; i++){
-            int j = i - 1;
-            int temp = num[i];
-            while (j >= 0 && temp < num[j]){
-                num[j+1] = num[j];
-                j--;
-            }
-            num[j+1] = temp;
-        }*/
         Arrays.sort(num);
 
         int a = 99999;
@@ -52,3 +43,41 @@ public class ThreeSum {
         return lists;
     }
 }
+
+/*
+ 吾等凡夫俗子瞻仰
+ vector<vector<int> > threeSum(vector<int>& nums) {
+    if(nums.size() <=2) return {};
+    vector<vector<int> > rtn;
+    sort(nums.begin(), nums.end());
+
+    for(int i =0; i < nums.size();){
+        int start = i+1, end = nums.size()-1;
+
+        while(start < end){
+            if(nums[i]+nums[start]+nums[end] == 0){
+                rtn.push_back({nums[i],nums[start],nums[end]});
+                start++;
+                end--;
+                while((start < end) && nums[start] == nums[start-1]) start++;
+                while((start < end) && nums[end] == nums[end+1]) end--;
+
+            }else if(nums[i]+nums[start]+nums[end]<0){
+                start++;
+                while((start < end) && nums[start] == nums[start-1]) start++;
+            }else{
+                end--;
+                while((start < end) && nums[end] == nums[end+1]) end--;
+            }
+        }
+
+        i++;
+        while((i < nums.size()) && nums[i] == nums[i-1])
+            i++;
+
+    }
+    return rtn;
+}
+
+
+*/

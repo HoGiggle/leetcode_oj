@@ -1,4 +1,4 @@
-package intel.bigdata.com;
+package com.company;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -15,9 +15,14 @@ public class StringToInteger{
          * 3、str表示数超过int范围
          */
 
-        Pattern p = Pattern.compile("^([+-]?\\d+).*$");
+        Pattern p = Pattern.compile("^([+-]?\\d+).*&");
         Matcher m = p.matcher(str.trim());
-        if (m.find()){
+        while (m.find()){
+            System.out.println(m.group());
+            System.out.println(m.group(1));
+            System.out.println("**************");
+        }
+        /*if (m.find()){
             System.out.println(m.group(1));
             BigInteger big = new BigInteger(m.group(1));
             if (big.signum() > 0 && big.subtract(new BigInteger(String.valueOf(Integer.MAX_VALUE))).signum() > 0)
@@ -25,12 +30,12 @@ public class StringToInteger{
             if (big.signum() < 0 && big.subtract(new BigInteger(Integer.MIN_VALUE + "")).signum() < 0)
                 return Integer.MIN_VALUE;
             return big.intValue();
-        }
+        }*/
         return 0;
     }
 
     public static void main(String[] args) {
         StringToInteger s = new StringToInteger();
-        System.out.println(s.atoi(""));
+        System.out.println(s.atoi("afjasjf+21378fjs993+837fjal-830"));
     }
 }
